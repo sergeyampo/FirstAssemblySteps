@@ -7,7 +7,7 @@ env:
 
 jobs:
   fifth_lab_first_task: 
-    runs-on: ubuntu:latest
+    runs-on: ubuntu
     steps:
       - name: Cmake configure
         working-directory: fifth_lab/first
