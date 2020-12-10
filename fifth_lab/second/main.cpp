@@ -13,8 +13,9 @@ float calc(const float& x, const float& c) {
 
 int main() {
   float x;
-  cout << "Введите x: ";
-  cin >> x;
+//  cout << "Введите x: ";
+//  cin >> x;
+  x = 14.22; //github actions
   float c = 1.3f;
 
   float y;
