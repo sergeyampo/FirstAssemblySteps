@@ -47,6 +47,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install   
+        run: sudo apt-get install gcc-multilib g++-multilib 
          
       - name: Cmake configure
         working-directory: fifth_lab/third
