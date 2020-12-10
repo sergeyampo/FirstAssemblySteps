@@ -1,0 +1,25 @@
+name: LabsRun
+
+on: [push]
+
+env:
+  BUILD_TYPE: Debug
+
+jobs:
+  fifth_lab_first_task: 
+    runs-on: ubuntu:latest
+    steps:
+      - name: Cmake configure
+        working-directory: fifth_lab/first
+        run: cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ./
+        
+      - name: Cmake build
+        shell: bash
+        working-directory: fifth_lab/first
+        run: cmake --build . --target lab_fifth -- -j 6
+      
+      - name: Run an app
+        shell: bash
+        working-directory: fifth_lab/first
+        run: ./lab_fifth
+  
