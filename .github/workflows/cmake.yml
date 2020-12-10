@@ -24,4 +24,42 @@ jobs:
         shell: bash
         working-directory: fifth_lab/first
         run: ./lab_fifth
-  
+  fifth_lab_second_task: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+         
+      - name: Cmake configure
+        working-directory: fifth_lab/second
+        run: cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ./
+        
+      - name: Cmake build
+        shell: bash
+        working-directory: fifth_lab/second
+        run: cmake --build . --target lab_fifth_second -- -j 6
+      
+      - name: Run an app
+        shell: bash
+        working-directory: fifth_lab/second
+        run: ./lab_fifth_second
+    
+  fifth_lab_third_task: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install   
+        run: sudo apt-get install gcc-multilib g++-multilib 
+         
+      - name: Cmake configure
+        working-directory: fifth_lab/third
+        run: cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ./
+        
+      - name: Cmake build
+        shell: bash
+        working-directory: fifth_lab/third
+        run: cmake --build . --target lab_fifth_third -- -j 6
+      
+      - name: Run an app
+        shell: bash
+        working-directory: fifth_lab/third
+        run: ./lab_fifth_third
